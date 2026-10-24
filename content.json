@@ -1,0 +1,242 @@
+{
+  "_help": "START HERE. This is the ONE file that holds your website's text, links, images and settings. Any key that starts with an underscore (like this one) is just a note for you and is ignored by the website. Rules for editing: (1) all text goes inside \"double quotes\"; (2) items in a list [ ... ] or object { ... } are separated by commas, but there is NO comma after the last item; (3) to put a double quote inside text write \\\" ; (4) image paths are written relative to the folder that contains index.html, for example \"assets/images/hero.jpg\" (no leading slash). Full instructions with examples: CUSTOMIZATION.md. Public website warning: everything in this file is visible to every visitor, so never put passwords or private information in it.",
+
+  "site": {
+    "_help": "SITE-WIDE SETTINGS. name = your display name (shown in the menu bar and the big homepage title). browserTitle = text on the browser tab for the Home page. titleTemplate = tab title for the other pages, where {page} becomes the page title and {name} becomes your name. description = short summary used by search engines. favicon = the small tab icon (a .svg, .png or .ico file). language = 'en', 'es', 'fr'... footerText = small text at the bottom; {year} becomes the current year and {name} your name. Set footerText to \"\" to show no text.",
+    "name": "skip",
+    "browserTitle": "skip | sound design, video & games",
+    "titleTemplate": "{page} | {name}",
+    "description": "Portfolio of skip: sound design, sound effects, video editing, game development and other creative projects.",
+    "favicon": "assets/favicon.svg",
+    "language": "en",
+    "footerText": "© {year} {name}. All rights reserved."
+  },
+
+  "navigation": {
+    "_help": "NAVIGATION MENU. Each item: label = the words in the menu; href = the page it opens (keep the file names unless you rename the HTML files); page = which page it belongs to ('home', 'about' or 'works', used to highlight the current page; may be left out); show = true/false to show or hide the item. You may add extra items that point to other web addresses.",
+    "items": [
+      { "label": "Home",  "href": "index.html", "page": "home",  "show": true },
+      { "label": "About", "href": "about.html", "page": "about", "show": true },
+      { "label": "Works", "href": "works.html", "page": "works", "show": true }
+    ]
+  },
+
+  "theme": {
+    "_help": "COLORS AND FONTS. colors: any CSS color works ('#ff6a3d', 'rgb(255 106 61)', 'tomato'). accent = the one highlight color (buttons, hover effects). background = page background; surface = cards; text = main text; mutedText = softer text; border = thin lines; accentText = text color written on top of an accent-colored button (keep it readable!). fonts: heading is used for your name and titles, body for everything else. family = the exact font name from fonts.google.com. weights = the thickness values to download, separated by semicolons (check the font's page to see which exist). fallback = fonts used if the web font cannot load (use 'single quotes' for names containing spaces). Set useGoogleFonts to false to avoid contacting Google at all (the fallback fonts are then used, or any font installed on the visitor's device). radius = how rounded the corners are ('0px' for sharp, '24px' for very round). animations = false turns off the decorative motion.",
+    "colors": {
+      "background": "#0e0e10",
+      "surface": "#17171a",
+      "text": "#f1efe9",
+      "mutedText": "#9b9aa3",
+      "border": "#2a2a30",
+      "accent": "#ff6a3d",
+      "accentText": "#140a06"
+    },
+    "fonts": {
+      "useGoogleFonts": true,
+      "heading": {
+        "family": "Syne",
+        "weights": "600;700;800",
+        "fallback": "'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+      },
+      "body": {
+        "family": "Inter",
+        "weights": "400;500;600",
+        "fallback": "system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
+      }
+    },
+    "radius": "14px",
+    "animations": true
+  },
+
+  "visibility": {
+    "_help": "SHOW OR HIDE PARTS OF THE SITE. true = shown, false = hidden. Nothing is deleted when you hide something, you can switch it back on any time. Individual About sections and Works projects have their own \"show\" setting inside their entries.",
+    "homeEyebrow": true,
+    "homeIntro": true,
+    "homeButtons": true,
+    "homeFeaturedWorks": true,
+    "homeSocialLinks": false,
+    "aboutPortrait": true,
+    "aboutSocialLinks": true,
+    "aboutExternalLinks": true,
+    "worksIntro": true,
+    "worksFilters": true,
+    "footer": true,
+    "footerSocialLinks": true
+  },
+
+  "images": {
+    "_help": "SITE-WIDE IMAGE PATHS. Put your image files in the assets/images folder and write the path here exactly, including the file extension and matching capital letters (GitHub Pages is case sensitive). hero = the big homepage image. heroAlt = a short description for people using screen readers. aboutPortrait = the picture on the About page ('' for none). defaultThumbnail = optional picture used for projects that have no thumbnail and no YouTube video ('' to use the built-in tasteful placeholder). Project thumbnails and About-section images are set inside their own entries.",
+    "hero": "assets/images/hero-placeholder.svg",
+    "heroAlt": "Abstract glowing sound waveform on a dark background",
+    "aboutPortrait": "assets/images/about-placeholder.svg",
+    "aboutPortraitAlt": "Placeholder portrait of skip",
+    "defaultThumbnail": ""
+  },
+
+  "social": {
+    "_help": "SOCIAL MEDIA LINKS. Each item: label = the words shown; url = the full address starting with https:// (or mailto:you@example.com for email); show = true/false. These example addresses are placeholders: replace them with your real profiles. Copy one { ... } line to add another and remember the comma between items.",
+    "items": [
+      { "label": "YouTube",    "url": "https://www.youtube.com/@your-channel",   "show": true },
+      { "label": "SoundCloud", "url": "https://soundcloud.com/your-name",        "show": true },
+      { "label": "GitHub",     "url": "https://github.com/your-username",        "show": true },
+      { "label": "Instagram",  "url": "https://www.instagram.com/your-name",     "show": false },
+      { "label": "Email",      "url": "mailto:hello@example.com",                "show": false }
+    ]
+  },
+
+  "home": {
+    "_help": "HOMEPAGE. layout: 'overlay' (text sits on top of a full-width image) or 'split' (text on the left, picture on the right). textAlign: 'left' or 'center' (overlay layout only). heroHeight: 'full', 'tall' or 'medium'. imageFocus = which part of the hero image stays visible when it is cropped ('center', 'top', 'bottom', 'left', 'right', or e.g. '30% 70%'). imageDim: 0 to 1, how much the image is darkened so the text stays readable (0.55 is a good start). eyebrow = small line above your name. tagline = the big sentence under your name. intro = optional short paragraph (use \"\" for none). buttons: label, href (a page or web address) and style ('primary', 'secondary' or 'ghost'); remove the whole list with [] for no buttons. featured: settings for the 'Featured work' strip, which shows projects marked \"featured\": true on the Works page (max = how many).",
+    "layout": "overlay",
+    "textAlign": "left",
+    "heroHeight": "tall",
+    "imageFocus": "center",
+    "imageDim": 0.55,
+    "eyebrow": "Sound design · Video editing · Game development",
+    "tagline": "I make things you can hear, watch and play.",
+    "intro": "Sound effects, edits and small games, built with a love for the details most people only feel.",
+    "buttons": [
+      { "label": "See my work", "href": "works.html", "style": "primary" },
+      { "label": "About me",    "href": "about.html", "style": "secondary" }
+    ],
+    "featured": {
+      "heading": "Featured work",
+      "max": 3,
+      "linkLabel": "View all work →"
+    }
+  },
+
+  "about": {
+    "_help": "ABOUT PAGE. pageTitle = used for the browser tab. heading = big title on the page. lead = optional one-sentence summary under the title (\"\" for none). portraitCaption = optional caption under the portrait picture (the picture itself is set in the images section above). bio = your main biography: one text per paragraph, in order. sections = extra blocks, shown in order. Each section: id (any short name), show (true/false), heading, paragraphs (list of texts), list (optional bullet points), image (optional: src, alt, caption), imagePosition ('right', 'left' or 'top'), links (optional list of label + url). Any of these except heading may be left out. To add a section, copy a whole { ... } block and put a comma between blocks. socialHeading and externalLinksHeading are the titles above those lists; externalLinks works like social links but with an optional description.",
+    "pageTitle": "About",
+    "heading": "About me",
+    "lead": "Creative generalist with a soft spot for sound.",
+    "portraitCaption": "Replace this picture and caption with your own.",
+    "bio": [
+      "Hi, I'm skip. This is a sample biography: replace it with your own story in your own words. Tell visitors who you are, what you make and what keeps you curious.",
+      "I work across sound design, sound effects, video editing and game development. I love the moments where all of them come together, when a well-timed sound makes a cut land or a game feel alive.",
+      "Right now I'm collecting projects here and always up for new collaborations. Say hello through any of the links below."
+    ],
+    "sections": [
+      {
+        "id": "what-i-do",
+        "show": true,
+        "heading": "What I do",
+        "paragraphs": [
+          "A short description of your main skills. Keep it friendly and specific: what do you enjoy making and what can people hire you for?"
+        ],
+        "list": [
+          "Sound design and sound effects",
+          "Video editing and motion",
+          "Game development and game audio",
+          "Anything creative that sounds like fun"
+        ]
+      },
+      {
+        "id": "my-process",
+        "show": true,
+        "heading": "How I work",
+        "paragraphs": [
+          "This section shows an optional image next to the text. Use it for behind-the-scenes photos, your setup, or a favorite project.",
+          "Remove the \"image\" block (or set \"show\" to false) if you don't want it."
+        ],
+        "image": {
+          "src": "assets/images/about/workspace-placeholder.svg",
+          "alt": "Abstract illustration of an editing timeline",
+          "caption": "Optional caption: my editing timeline at 2 a.m."
+        },
+        "imagePosition": "right"
+      },
+      {
+        "id": "tools",
+        "show": true,
+        "heading": "Tools & links",
+        "paragraphs": [
+          "Sections can also contain a list of links."
+        ],
+        "links": [
+          { "label": "Example link one", "url": "https://example.com/" },
+          { "label": "Example link two", "url": "https://example.org/" }
+        ]
+      },
+      {
+        "id": "hidden-example",
+        "show": false,
+        "heading": "A hidden section",
+        "paragraphs": [ "Set \"show\" to true and this section appears. Nothing is lost while it is hidden." ]
+      }
+    ],
+    "socialHeading": "Find me online",
+    "externalLinksHeading": "More from me",
+    "externalLinks": [
+      { "label": "Sound effects library", "url": "https://example.com/sfx", "description": "Free sounds for your own projects.", "show": true },
+      { "label": "Game jam entries",       "url": "https://example.com/jams", "description": "Small games made in a weekend.", "show": true }
+    ]
+  },
+
+  "works": {
+    "_help": "WORKS PAGE. pageTitle = browser tab title. heading = big page title. intro = optional text under it (\"\" for none). allLabel = text of the 'show everything' filter button. emptyMessage = shown when there are no visible projects. thumbnailRatio = shape of every thumbnail, written 'width / height' ('16 / 9' is widescreen, '4 / 3' or '1 / 1' also work). sort = 'file' (keep the order written below) or 'newest' (highest year first). projects = your list of projects, in the order shown. TO ADD A PROJECT copy one whole { ... } block below, paste it after the last one with a comma between, and change the values.",
+    "pageTitle": "Works",
+    "heading": "Selected works",
+    "intro": "A mix of sound, video and games. Click a video to play it right here.",
+    "allLabel": "All",
+    "emptyMessage": "No projects to show yet. Check back soon!",
+    "thumbnailRatio": "16 / 9",
+    "sort": "file",
+
+    "projects": [
+      {
+        "_help": "PROJECT FIELDS. Only 'title' is needed; everything else is optional. show = false hides the project without deleting it. featured = true also lists it on the homepage. title = name shown on the card. description = short text (\"\" for none). category = a word used for the filter buttons (or a list like [\"Video\", \"Animation\"]). year = e.g. 2025. url = where the project lives; a YouTube address (youtube.com/watch?v=, youtu.be/ or youtube.com/shorts/) is recognised automatically and becomes a video player. video = a YouTube address to embed when 'url' is a normal website (optional). embed = false keeps a YouTube link as a plain link card instead of a player. thumbnail = path to your own thumbnail picture; if empty and the project is a YouTube video, the YouTube thumbnail is used. thumbnailAlt = description of the thumbnail (optional). linkLabel = custom text for the link button (optional).",
+        "show": true,
+        "featured": true,
+        "title": "Neon Rain: Sound Design Reel",
+        "description": "Example YouTube project. The video is recognised from the url and the thumbnail is fetched from YouTube automatically.",
+        "category": "Sound Design",
+        "year": 2025,
+        "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+        "thumbnail": "",
+        "thumbnailAlt": "",
+        "linkLabel": ""
+      },
+      {
+        "show": true,
+        "featured": true,
+        "title": "Pixel Drift",
+        "description": "Example game project with an ordinary website link and your own thumbnail picture. Not every site can be embedded, so this becomes a clean card with a button.",
+        "category": "Game Dev",
+        "year": 2024,
+        "url": "https://example.com/pixel-drift",
+        "thumbnail": "assets/images/projects/pixel-drift.svg",
+        "thumbnailAlt": "Pixel art style racing game screenshot",
+        "linkLabel": "Play the demo"
+      },
+      {
+        "show": true,
+        "featured": true,
+        "title": "Quick Cut: Short Edit",
+        "description": "Example YouTube Shorts link that uses a custom thumbnail instead of the one from YouTube.",
+        "category": "Video Editing",
+        "year": 2024,
+        "url": "https://www.youtube.com/shorts/aqz-KE-bpKQ",
+        "thumbnail": "assets/images/projects/quick-cut.svg",
+        "thumbnailAlt": "Editing timeline with colored clips"
+      },
+      {
+        "show": true,
+        "title": "Sound Effects Pack Vol. 1",
+        "description": "",
+        "category": "Sound Design",
+        "year": 2023,
+        "url": "https://example.com/sfx-pack"
+      },
+      {
+        "show": false,
+        "title": "Hidden example project",
+        "description": "This project has \"show\": false, so visitors cannot see it. Change it to true to publish it.",
+        "category": "Experiments",
+        "year": 2022,
+        "url": "https://example.com/hidden"
+      }
+    ]
+  }
+}
