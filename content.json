@@ -69,19 +69,20 @@
     "_help": "SITE-WIDE IMAGE PATHS. Put your image files in the assets/images folder and write the path here exactly, including the file extension and matching capital letters (GitHub Pages is case sensitive). hero = the big homepage image. heroAlt = a short description for people using screen readers. aboutPortrait = the picture on the About page ('' for none). defaultThumbnail = optional picture used for projects that have no thumbnail and no YouTube video ('' to use the built-in tasteful placeholder). Project thumbnails and About-section images are set inside their own entries.",
     "hero": "assets/images/hero-placeholder.svg",
     "heroAlt": "Abstract glowing sound waveform on a dark background",
-    "aboutPortrait": "assets/images/about-placeholder.svg",
-    "aboutPortraitAlt": "Placeholder portrait of skip",
+    "aboutPortrait": "assets/images/about-portrait.webp",
+    "aboutPortraitAlt": "Luna, a black cat, resting on a windowsill shelf",
     "defaultThumbnail": ""
   },
 
   "social": {
-    "_help": "SOCIAL MEDIA LINKS. Each item: label = the words shown; url = the full address starting with https:// (or mailto:you@example.com for email); show = true/false. These example addresses are placeholders: replace them with your real profiles. Copy one { ... } line to add another and remember the comma between items.",
+    "_help": "SOCIAL MEDIA LINKS. Each item: label = the words shown; url = the full address starting with https:// (or mailto:you@example.com for email); show = true/false; icon = optional. A white logo is added next to the label automatically for YouTube, Discord, GitHub, X/Twitter, SoundCloud, Instagram, Twitch, TikTok, Bandcamp, Spotify, itch.io, Patreon, Reddit and Bluesky, based on the address. Use \"icon\": \"none\" to hide it, or e.g. \"icon\": \"github\" to force a specific one. Copy one { ... } line to add another and remember the comma between items.",
     "items": [
-      { "label": "YouTube",    "url": "https://www.youtube.com/@your-channel",   "show": true },
-      { "label": "SoundCloud", "url": "https://soundcloud.com/your-name",        "show": true },
-      { "label": "GitHub",     "url": "https://github.com/your-username",        "show": true },
-      { "label": "Instagram",  "url": "https://www.instagram.com/your-name",     "show": false },
-      { "label": "Email",      "url": "mailto:hello@example.com",                "show": false }
+      { "label": "YouTube",   "url": "https://www.youtube.com/@Skipwayy",     "show": true },
+      { "label": "Discord",   "url": "https://discord.gg/DXHhTJPTD9",          "show": true },
+      { "label": "GitHub",    "url": "https://github.com/skipway",             "show": true },
+      { "label": "Twitter",   "url": "https://x.com/skip_way",                 "show": true },
+      { "label": "Instagram", "url": "https://www.instagram.com/your-name",    "show": false },
+      { "label": "Email",     "url": "mailto:hello@example.com",               "show": false }
     ]
   },
 
@@ -92,9 +93,9 @@
     "heroHeight": "tall",
     "imageFocus": "center",
     "imageDim": 0.55,
-    "eyebrow": "Sound design · Video editing · Game development",
-    "tagline": "I make things you can hear, watch and play.",
-    "intro": "Sound effects, edits and small games, built with a love for the details most people only feel.",
+    "eyebrow": "sound engineer, game designer, motion designer",
+    "tagline": "Streamlining the boring parts of development with high-quality work.",
+    "intro": "",
     "buttons": [
       { "label": "See my work", "href": "works.html", "style": "primary" },
       { "label": "About me",    "href": "about.html", "style": "secondary" }
@@ -110,26 +111,21 @@
     "_help": "ABOUT PAGE. pageTitle = used for the browser tab. heading = big title on the page. lead = optional one-sentence summary under the title (\"\" for none). portraitCaption = optional caption under the portrait picture (the picture itself is set in the images section above). bio = your main biography: one text per paragraph, in order. sections = extra blocks, shown in order. Each section: id (any short name), show (true/false), heading, paragraphs (list of texts), list (optional bullet points), image (optional: src, alt, caption), imagePosition ('right', 'left' or 'top'), links (optional list of label + url). Any of these except heading may be left out. To add a section, copy a whole { ... } block and put a comma between blocks. socialHeading and externalLinksHeading are the titles above those lists; externalLinks works like social links but with an optional description.",
     "pageTitle": "About",
     "heading": "About me",
-    "lead": "Creative generalist with a soft spot for sound.",
-    "portraitCaption": "Replace this picture and caption with your own.",
+    "lead": "sound engineer, game designer, motion designer",
+    "portraitCaption": "my cat - luna :3",
     "bio": [
-      "Hi, I'm skip. This is a sample biography: replace it with your own story in your own words. Tell visitors who you are, what you make and what keeps you curious.",
-      "I work across sound design, sound effects, video editing and game development. I love the moments where all of them come together, when a well-timed sound makes a cut land or a game feel alive.",
-      "Right now I'm collecting projects here and always up for new collaborations. Say hello through any of the links below."
+      "Hello, I'm Skip / Skipway, a proficient sound designer, graphics designer and much more. I love to do commission work for fair prices for people with similar interests to mine.",
+      "I like to tinker with sound, layering various sources and occasionally my own recorded clips to make feedback and every ability feel impactful in mine and others' games (typically Roblox games). I also have vast experience in programs such as After Effects, Photoshop, and Premiere - I also love making music in my free time and playing a wide assortment of video games."
     ],
     "sections": [
       {
         "id": "what-i-do",
         "show": true,
         "heading": "What I do",
-        "paragraphs": [
-          "A short description of your main skills. Keep it friendly and specific: what do you enjoy making and what can people hire you for?"
-        ],
         "list": [
-          "Sound design and sound effects",
-          "Video editing and motion",
-          "Game development and game audio",
-          "Anything creative that sounds like fun"
+          "SFX and sound engineering, including game audio and music",
+          "Motion design and complex video editing",
+          "Game design, building and graphic design for games"
         ]
       },
       {
@@ -137,27 +133,13 @@
         "show": true,
         "heading": "How I work",
         "paragraphs": [
-          "This section shows an optional image next to the text. Use it for behind-the-scenes photos, your setup, or a favorite project.",
-          "Remove the \"image\" block (or set \"show\" to false) if you don't want it."
+          "I use applications like Reaper, FL Studio, and Premiere to realize my sound, motion, and creativity. I'm also an experienced thumbnail creator in Photoshop, attributing to millions of cumulative views on various channels across YouTube."
         ],
         "image": {
           "src": "assets/images/about/workspace-placeholder.svg",
-          "alt": "Abstract illustration of an editing timeline",
-          "caption": "Optional caption: my editing timeline at 2 a.m."
+          "alt": "Abstract illustration of an editing timeline"
         },
         "imagePosition": "right"
-      },
-      {
-        "id": "tools",
-        "show": true,
-        "heading": "Tools & links",
-        "paragraphs": [
-          "Sections can also contain a list of links."
-        ],
-        "links": [
-          { "label": "Example link one", "url": "https://example.com/" },
-          { "label": "Example link two", "url": "https://example.org/" }
-        ]
       },
       {
         "id": "hidden-example",
@@ -175,7 +157,7 @@
   },
 
   "works": {
-    "_help": "WORKS PAGE. pageTitle = browser tab title. heading = big page title. intro = optional text under it (\"\" for none). allLabel = text of the 'show everything' filter button. emptyMessage = shown when there are no visible projects. thumbnailRatio = shape of every thumbnail, written 'width / height' ('16 / 9' is widescreen, '4 / 3' or '1 / 1' also work). sort = 'file' (keep the order written below) or 'newest' (highest year first). projects = your list of projects, in the order shown. TO ADD A PROJECT copy one whole { ... } block below, paste it after the last one with a comma between, and change the values.",
+    "_help": "WORKS PAGE. pageTitle = browser tab title. heading = big page title. intro = optional text under it (\"\" for none). allLabel = text of the 'show everything' filter button. emptyMessage = shown when there are no visible projects. thumbnailRatio = shape of every thumbnail, written 'width / height' ('16 / 9' is widescreen, '4 / 3' or '1 / 1' also work). sort = 'file' (keep the order written below) or 'newest' (highest year first). projects = your list of projects, in the order shown. TO ADD A PROJECT copy one whole { ... } block below, paste it after the last one with a comma between, and change the values. PROJECT FIELDS: only 'title' is needed; everything else is optional. show = false hides the project without deleting it. featured = true also lists it on the homepage. title = name shown on the card. description = short text (\"\" for none). category = a word used for the filter buttons (or a list like [\"Video\", \"Animation\"]). year = e.g. 2025. url = where the project lives; a YouTube address (youtube.com/watch?v=, youtu.be/ or youtube.com/shorts/) is recognised automatically and becomes a video player. video = a YouTube address to embed when 'url' is a normal website (optional). embed = false keeps a YouTube link as a plain link card instead of a player. thumbnail = path to your own thumbnail picture; if empty and the project is a YouTube video, the YouTube thumbnail is used. thumbnailAlt = description of the thumbnail (optional). linkLabel = custom text for the link button (optional).",
     "pageTitle": "Works",
     "heading": "Selected works",
     "intro": "A mix of sound, video and games. Click a video to play it right here.",
@@ -186,56 +168,28 @@
 
     "projects": [
       {
-        "_help": "PROJECT FIELDS. Only 'title' is needed; everything else is optional. show = false hides the project without deleting it. featured = true also lists it on the homepage. title = name shown on the card. description = short text (\"\" for none). category = a word used for the filter buttons (or a list like [\"Video\", \"Animation\"]). year = e.g. 2025. url = where the project lives; a YouTube address (youtube.com/watch?v=, youtu.be/ or youtube.com/shorts/) is recognised automatically and becomes a video player. video = a YouTube address to embed when 'url' is a normal website (optional). embed = false keeps a YouTube link as a plain link card instead of a player. thumbnail = path to your own thumbnail picture; if empty and the project is a YouTube video, the YouTube thumbnail is used. thumbnailAlt = description of the thumbnail (optional). linkLabel = custom text for the link button (optional).",
         "show": true,
         "featured": true,
-        "title": "Neon Rain: Sound Design Reel",
-        "description": "Example YouTube project. The video is recognised from the url and the thumbnail is fetched from YouTube automatically.",
+        "title": "m1s 2026 10 18 16 16 23 03",
+        "description": "m1 sfx work for my own game",
         "category": "Sound Design",
-        "year": 2025,
-        "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
-        "thumbnail": "",
-        "thumbnailAlt": "",
-        "linkLabel": ""
+        "url": "https://youtu.be/fX6n3dA0u-I"
       },
       {
         "show": true,
         "featured": true,
-        "title": "Pixel Drift",
-        "description": "Example game project with an ordinary website link and your own thumbnail picture. Not every site can be embedded, so this becomes a clean card with a button.",
-        "category": "Game Dev",
-        "year": 2024,
-        "url": "https://example.com/pixel-drift",
-        "thumbnail": "assets/images/projects/pixel-drift.svg",
-        "thumbnailAlt": "Pixel art style racing game screenshot",
-        "linkLabel": "Play the demo"
-      },
-      {
-        "show": true,
-        "featured": true,
-        "title": "Quick Cut: Short Edit",
-        "description": "Example YouTube Shorts link that uses a custom thumbnail instead of the one from YouTube.",
-        "category": "Video Editing",
-        "year": 2024,
-        "url": "https://www.youtube.com/shorts/aqz-KE-bpKQ",
-        "thumbnail": "assets/images/projects/quick-cut.svg",
-        "thumbnailAlt": "Editing timeline with colored clips"
-      },
-      {
-        "show": true,
-        "title": "Sound Effects Pack Vol. 1",
-        "description": "",
+        "title": "ranged plasma stuff 2026 10 18 16 18 48 06",
+        "description": "ranged techy stuff",
         "category": "Sound Design",
-        "year": 2023,
-        "url": "https://example.com/sfx-pack"
+        "url": "https://youtu.be/mcv0dqd2cu4"
       },
       {
-        "show": false,
-        "title": "Hidden example project",
-        "description": "This project has \"show\": false, so visitors cannot see it. Change it to true to publish it.",
-        "category": "Experiments",
-        "year": 2022,
-        "url": "https://example.com/hidden"
+        "show": true,
+        "featured": true,
+        "title": "plasma shotgun 2026 10 18 16 17 58 04",
+        "description": "hard hitting shotty sfx stuffs",
+        "category": "Sound Design",
+        "url": "https://youtu.be/mznrcFtEXFc"
       }
     ]
   }

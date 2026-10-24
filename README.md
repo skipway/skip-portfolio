@@ -25,6 +25,7 @@ skip-portfolio/
 ├── script.js           behavior (advanced)
 ├── assets/
 │   ├── favicon.svg
+│   ├── icons/          white site logos (YouTube, Discord, GitHub, X ...)
 │   └── images/         ★ your pictures go here (hero, about/, projects/)
 ├── .nojekyll           tells GitHub Pages to publish the files as they are
 ├── README.md           this file
@@ -102,4 +103,8 @@ Any current version of Chrome, Edge, Firefox, Safari (including iOS and Android 
 
 ## Files you can safely delete
 
-Nothing needs deleting. The placeholder pictures `hero-placeholder.svg`, `about-placeholder.svg`, `about/workspace-placeholder.svg`, `projects/pixel-drift.svg` and `projects/quick-cut.svg` can be removed once you no longer reference them in `content.json`.
+Nothing needs deleting. The placeholder pictures `hero-placeholder.svg` and `about/workspace-placeholder.svg` can be removed once you no longer reference them in `content.json`.
+
+## Credits
+
+The white logos in `assets/icons/` come from [Simple Icons](https://simpleicons.org) (CC0 1.0). The logos themselves remain trademarks of their respective owners; see `assets/icons/ABOUT-ICONS.txt`.

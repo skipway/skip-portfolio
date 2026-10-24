@@ -140,8 +140,17 @@ button { font: inherit; color: inherit; }
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 .chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-.chip__arrow { opacity: 0.55; margin-left: 0.3rem; }
+.chip { gap: 0.55rem; }
 .chips--small .chip { padding: 0.35rem 0.8rem; font-size: 0.85rem; background: transparent; }
+
+/* plain white site logos (assets/icons/*.svg, set as a mask by script.js); they turn accent-colored on hover */
+.icon {
+  flex: none; display: inline-block; width: 1.1em; height: 1.1em;
+  background-color: var(--icon-color, #fff);
+  -webkit-mask: center / contain no-repeat; mask: center / contain no-repeat;
+  transition: background-color 0.2s ease;
+}
+.chip:hover .icon, .btn:hover .icon { background-color: var(--accent); }
 
 .eyebrow {
   margin: 0 0 1rem;
@@ -254,7 +263,7 @@ button { font: inherit; color: inherit; }
 .hero__tagline {
   font-family: var(--font-heading);
   font-size: clamp(1.4rem, 3.6vw, 2.4rem); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em;
-  max-width: 22ch; margin-bottom: 0.7rem;
+  max-width: 30ch; margin-bottom: 0.7rem;
 }
 .hero__intro { max-width: 46ch; color: color-mix(in srgb, var(--text) 78%, transparent); font-size: 1.05rem; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.75rem; }
@@ -295,7 +304,7 @@ button { font: inherit; color: inherit; }
 
 .figure { margin: 0; }
 .figure img { width: 100%; border-radius: calc(var(--radius) * 1.3); border: 1px solid var(--border); background: var(--surface); }
-.figure--portrait img { aspect-ratio: 4 / 5; object-fit: cover; }
+.figure--portrait img { aspect-ratio: 3 / 4; object-fit: cover; }
 .figure figcaption { margin-top: 0.7rem; font-size: 0.85rem; color: var(--muted); }
 
 .about-sections { display: grid; gap: clamp(2.5rem, 6vw, 4.5rem); padding-block: clamp(1.5rem, 4vw, 3rem); border-top: 1px solid var(--border); }
@@ -400,7 +409,6 @@ button { font: inherit; color: inherit; }
 .tag { padding: 0.15rem 0.6rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600; letter-spacing: 0.02em; }
 .year { color: var(--muted); }
 .card__title { font-size: 1.25rem; letter-spacing: -0.01em; }
-.card--featured .card__title::after { content: ""; display: inline-block; width: 7px; height: 7px; margin-left: 0.5rem; border-radius: 50%; background: var(--accent); vertical-align: middle; }
 .card__desc { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.55; }
 .card__notice { margin: 0; font-size: 0.85rem; color: var(--accent); }
 .card__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; padding-top: 0.75rem; }

@@ -46,11 +46,12 @@ skip-portfolio/
 ├── script.js         ← the behavior (advanced users only)
 ├── assets/
 │   ├── favicon.svg   ← tab icon
+│   ├── icons/        ← the white logos (YouTube, Discord, GitHub, X...) shown next to site names
 │   └── images/       ← ★ put your pictures here
 │       ├── hero-placeholder.svg
-│       ├── about-placeholder.svg
+│       ├── about-portrait.webp   ← the picture on the About page
 │       ├── about/    ← pictures used inside About-page sections
-│       └── projects/ ← project thumbnails
+│       └── projects/ ← project thumbnails (YouTube videos get theirs automatically)
 ├── README.md
 └── CUSTOMIZATION.md  ← this file
 ```
@@ -86,15 +87,15 @@ skip-portfolio/
 
 **Original:**
 ```json
-"eyebrow": "Sound design · Video editing · Game development",
-"tagline": "I make things you can hear, watch and play.",
-"intro": "Sound effects, edits and small games, built with a love for the details most people only feel.",
+"eyebrow": "sound engineer, game designer, motion designer",
+"tagline": "Streamlining the boring parts of development with high-quality work.",
+"intro": "",
 ```
 **Modified:**
 ```json
 "eyebrow": "Sound design · Edits · Games",
 "tagline": "Turning silence into something you can feel.",
-"intro": "",
+"intro": "A short paragraph under the tagline (it is empty right now, so nothing is shown).",
 ```
 - Set `intro` or `eyebrow` to `""` (empty quotes) to remove that line. Or hide them without touching the text with `visibility` → `homeIntro` / `homeEyebrow` set to `false`.
 - The `·` symbol is just text; copy it or use `|` or `-`.
@@ -149,26 +150,28 @@ The hero image is the large picture behind your name.
 **Original:**
 ```json
 "heading": "About me",
-"lead": "Creative generalist with a soft spot for sound.",
+"lead": "sound engineer, game designer, motion designer",
 "bio": [
-  "Hi, I'm skip. This is a sample biography: replace it ...",
-  "I work across sound design, sound effects, video editing and game development. ...",
-  "Right now I'm collecting projects here and always up for new collaborations. ..."
+  "Hello, I'm Skip / Skipway, a proficient sound designer, graphics designer and much more. I love to do commission work ...",
+  "I like to tinker with sound, layering various sources and occasionally my own recorded clips ..."
 ],
 ```
-**Modified (two paragraphs):**
+(The `...` here only shortens the example; your file contains the full sentences.)
+
+**Modified** (three paragraphs, different heading and lead):
 ```json
 "heading": "Hi, I'm skip",
-"lead": "Sound designer, editor and game tinkerer from Leeds.",
+"lead": "Sound designer, editor and game tinkerer.",
 "bio": [
   "I started making sound effects in my bedroom in 2019 and never stopped.",
-  "These days I edit videos, build small games and score anything that will hold still."
+  "These days I edit videos, build small games and score anything that will hold still.",
+  "Say hello on Discord or YouTube."
 ],
 ```
 - Add a paragraph: add a comma after the previous paragraph's closing quote and write a new `"..."`.
 - The last paragraph has **no comma**.
 - Plain text only. HTML tags such as `<b>` are shown literally, on purpose (it keeps your site safe).
-- **Your portrait photo:** copy it to `assets/images/` (portrait orientation, about 800 × 1000 px works well) and set `"aboutPortrait": "assets/images/me.jpg"` and `"aboutPortraitAlt": "Photo of me"` under `images`. Use `"aboutPortrait": ""` for no picture; the text then uses the full width. `about` → `portraitCaption` is the optional caption under it (`""` for none).
+- **The portrait photo:** currently `images` → `aboutPortrait` is `"assets/images/about-portrait.webp"` (a 960 × 1280 picture, shown at a 3 : 4 shape). To use a different one, copy it into `assets/images/` (portrait orientation, 3 : 4, about 960 × 1280 px works best; other shapes are cropped to fit) and change `"aboutPortrait"` and `"aboutPortraitAlt"` under `images`. Use `"aboutPortrait": ""` for no picture; the text then uses the full width. `about` → `portraitCaption` is the caption under it (currently `"my cat - luna :3"`; `""` for none).
 - **Check:** refresh the About page.
 
 ---
@@ -194,7 +197,9 @@ Below your main biography you can have as many extra sections as you like (`abou
   "links": [ { "label": "My gear list", "url": "https://example.com/gear" } ]
 }
 ```
-Only `heading` is really needed; leave out anything you do not want (for example delete the whole `"image": { ... }` part, and the comma before it, to have no picture).
+Only `heading` is really needed; leave out anything you do not want (for example delete the whole `"image": { ... }` part, and the comma before it, to have no picture, or leave out `"caption"` for no caption).
+
+Your current sections are "What I do" (a bullet `list`), "How I work" (one paragraph plus the timeline picture, no caption) and a hidden example (`"show": false`).
 
 - `imagePosition`: `"right"`, `"left"` or `"top"` (full width above the text).
 - `id`: any short name with letters, numbers and dashes. It lets you link directly to the section later (`about.html#section-what-i-do`).
@@ -223,26 +228,30 @@ Only `heading` is really needed; leave out anything you do not want (for example
 **Original:**
 ```json
 "items": [
-  { "label": "YouTube",    "url": "https://www.youtube.com/@your-channel", "show": true },
-  { "label": "SoundCloud", "url": "https://soundcloud.com/your-name",      "show": true },
-  { "label": "GitHub",     "url": "https://github.com/your-username",      "show": true },
-  { "label": "Instagram",  "url": "https://www.instagram.com/your-name",   "show": false },
-  { "label": "Email",      "url": "mailto:hello@example.com",              "show": false }
+  { "label": "YouTube",   "url": "https://www.youtube.com/@Skipwayy",   "show": true },
+  { "label": "Discord",   "url": "https://discord.gg/DXHhTJPTD9",        "show": true },
+  { "label": "GitHub",    "url": "https://github.com/skipway",           "show": true },
+  { "label": "Twitter",   "url": "https://x.com/skip_way",               "show": true },
+  { "label": "Instagram", "url": "https://www.instagram.com/your-name",  "show": false },
+  { "label": "Email",     "url": "mailto:hello@example.com",             "show": false }
 ]
 ```
-**Modified** (real addresses, Instagram switched on, a new Twitch line added at the end):
+**Modified** (Instagram switched on with a real address, and a new Twitch line added at the end):
 ```json
 "items": [
-  { "label": "YouTube",    "url": "https://www.youtube.com/@skipsounds",    "show": true },
-  { "label": "SoundCloud", "url": "https://soundcloud.com/skipsounds",      "show": true },
-  { "label": "GitHub",     "url": "https://github.com/skipway",             "show": true },
-  { "label": "Instagram",  "url": "https://www.instagram.com/skipsounds",   "show": true },
-  { "label": "Email",      "url": "mailto:me@mydomain.com",                 "show": false },
-  { "label": "Twitch",     "url": "https://www.twitch.tv/skipsounds",       "show": true }
+  { "label": "YouTube",   "url": "https://www.youtube.com/@Skipwayy",   "show": true },
+  { "label": "Discord",   "url": "https://discord.gg/DXHhTJPTD9",        "show": true },
+  { "label": "GitHub",    "url": "https://github.com/skipway",           "show": true },
+  { "label": "Twitter",   "url": "https://x.com/skip_way",               "show": true },
+  { "label": "Instagram", "url": "https://www.instagram.com/skipsounds", "show": true },
+  { "label": "Email",     "url": "mailto:me@mydomain.com",               "show": false },
+  { "label": "Twitch",    "url": "https://www.twitch.tv/skipsounds",     "show": true }
 ]
 ```
 - The comma after the old last line (Email) is **required** once you add Twitch below it; Twitch has none.
+- To reorder links, cut and paste whole lines; they appear in the order written.
 - `label` is the visible text; `url` must start with `https://` (or `mailto:` for email). Anything else (for example `javascript:`) is ignored for safety.
+- **Icons:** a plain white logo is placed next to the label automatically, chosen from the web address. Supported: YouTube, Discord, GitHub, X/Twitter, SoundCloud, Instagram, Twitch, TikTok, Bandcamp, Spotify, itch.io, Patreon, Reddit and Bluesky. The logo files live in `assets/icons/` (from [Simple Icons](https://simpleicons.org), CC0 licence; see `assets/icons/ABOUT-ICONS.txt`). Add `"icon": "none"` to a link to hide its logo, or force one with e.g. `"icon": "github"` (names: `youtube`, `discord`, `github`, `x`, `soundcloud`, `instagram`, `twitch`, `tiktok`, `bandcamp`, `spotify`, `itchdotio`, `patreon`, `reddit`, `bluesky`). Sites not on the list simply show text only. The same logo also appears on project buttons that point to these sites, e.g. "Watch on YouTube".
 - To show social links on the **Home page** too: `visibility` → `"homeSocialLinks": true`. To hide the footer links: `"footerSocialLinks": false`.
 - **Check:** refresh the About page and click each link. It opens in a new tab.
 
@@ -255,29 +264,27 @@ Only `heading` is really needed; leave out anything you do not want (for example
 
 **The easy way:** copy an existing project block, paste it after the last project, put a comma between, and change the values.
 
-**Original** (the end of the list):
+**Original** (the end of the list: the last of your three projects):
 ```json
       {
         "show": true,
-        "title": "Sound Effects Pack Vol. 1",
-        "description": "",
+        "featured": true,
+        "title": "plasma shotgun 2026 10 18 16 17 58 04",
+        "description": "hard hitting shotty sfx stuffs",
         "category": "Sound Design",
-        "year": 2023,
-        "url": "https://example.com/sfx-pack"
-      },
-      {
-        "show": false,
-        "title": "Hidden example project",
-        ...
+        "url": "https://youtu.be/mznrcFtEXFc"
       }
     ]
 ```
-**Modified** (a new project added at the end; note the comma after the previous `}`):
+**Modified** (a new project added at the end; note the **comma added after the previous `}`**, and none after the new last `}`):
 ```json
       {
-        "show": false,
-        "title": "Hidden example project",
-        ...
+        "show": true,
+        "featured": true,
+        "title": "plasma shotgun 2026 10 18 16 17 58 04",
+        "description": "hard hitting shotty sfx stuffs",
+        "category": "Sound Design",
+        "url": "https://youtu.be/mznrcFtEXFc"
       },
       {
         "show": true,
@@ -285,7 +292,7 @@ Only `heading` is really needed; leave out anything you do not want (for example
         "description": "Foley recorded for a short film.",
         "category": "Sound Design",
         "year": 2025,
-        "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+        "url": "https://www.youtube.com/watch?v=fX6n3dA0u-I"
       }
     ]
 ```
@@ -301,9 +308,10 @@ Projects appear in the order written. Set `works` → `"sort": "newest"` to orde
 - **Key:** `works` → `projects` → the project's `title`
 - The title is independent of the link, so you can rename a project without touching its URL or thumbnail.
 
-**Original:** `"title": "Pixel Drift",`
-**Modified:** `"title": "Pixel Drift (Game Jam Edition)",`
+**Original:** `"title": "plasma shotgun 2026 10 18 16 17 58 04",`
+**Modified:** `"title": "Plasma Shotgun",`
 
+- Your three projects currently use the exact titles of their YouTube videos. Renaming here changes only the card, not the video on YouTube.
 - Find the project by searching the file for its old title (Ctrl+F / Cmd+F).
 - **Check:** refresh the Works page.
 
@@ -318,26 +326,26 @@ Paste the video address into `url`. These formats are recognised automatically (
 
 | Format | Example |
 |---|---|
-| Normal watch link | `https://www.youtube.com/watch?v=aqz-KE-bpKQ` |
-| Short link | `https://youtu.be/aqz-KE-bpKQ` |
-| YouTube Shorts | `https://www.youtube.com/shorts/aqz-KE-bpKQ` |
+| Normal watch link | `https://www.youtube.com/watch?v=fX6n3dA0u-I` |
+| Short link | `https://youtu.be/fX6n3dA0u-I` |
+| YouTube Shorts | `https://www.youtube.com/shorts/fX6n3dA0u-I` |
 
-**Original:**
+**Original** (a project that points at a normal website):
 ```json
-"url": "https://example.com/sfx-pack"
+"url": "https://example.com/my-project"
 ```
-**Modified:**
+**Modified** (now a video; this is how your three current projects are set up):
 ```json
-"url": "https://youtu.be/aqz-KE-bpKQ"
+"url": "https://youtu.be/fX6n3dA0u-I"
 ```
 What visitors get: a card with the video's thumbnail and a play button. Clicking it loads YouTube's privacy-friendly player (`youtube-nocookie.com`) inside the card, and a "Watch on YouTube" button stays underneath. **Videos never start by themselves**; they only play after a visitor clicks.
 
 Variations:
-- **A start time:** add it to the address (`https://youtu.be/aqz-KE-bpKQ?t=90` or `?t=1m30s`).
+- **A start time:** add it to the address (`https://youtu.be/fX6n3dA0u-I?t=90` or `?t=1m30s`).
 - **Link goes to a normal page but you also want a video:** keep `url` as the page and put the video in a separate field:
   ```json
   "url": "https://example.com/my-devlog",
-  "video": "https://www.youtube.com/watch?v=aqz-KE-bpKQ"
+  "video": "https://www.youtube.com/watch?v=fX6n3dA0u-I"
   ```
 - **No player, only a link card:** add `"embed": false,` to the project.
 - If a video's owner has disabled embedding, YouTube says so inside the player and the "Watch on YouTube" button still works. The website also tries to switch such a card back to a plain link automatically (this relies on a signal from YouTube; the always-present button is the reliable fallback).
@@ -355,19 +363,21 @@ The thumbnail is the picture on the project card. It is separate from the link: 
 
 **Step by step**
 1. Make a picture in the shape set by `works` → `thumbnailRatio` (default `"16 / 9"`, e.g. **1280 × 720** pixels). `.jpg`, `.webp`, `.png` or `.svg`. Other shapes are cropped to fit, never stretched.
-2. Name it simply, e.g. `pixel-drift.jpg`, and copy it into `assets/images/projects/`.
+2. Name it simply, e.g. `plasma-shotgun.jpg`, and copy it into `assets/images/projects/`.
 3. Set the path:
 
-**Original:**
+**Original** (your projects have no `thumbnail` line, so YouTube's picture is used):
 ```json
-"thumbnail": "",
+"url": "https://youtu.be/mznrcFtEXFc"
 ```
 **Modified:**
 ```json
-"thumbnail": "assets/images/projects/pixel-drift.jpg",
-"thumbnailAlt": "Screenshot of the Pixel Drift title screen",
+"url": "https://youtu.be/mznrcFtEXFc",
+"thumbnail": "assets/images/projects/plasma-shotgun.jpg",
+"thumbnailAlt": "Reaper project of the plasma shotgun sound",
 ```
-- If a project has **no** `"thumbnail"` line at all, that is fine too.
+(Note the **comma added after the `url` line** because more lines follow it.)
+- A project with `"thumbnail": ""` or no `thumbnail` line at all is fine too.
 - **Avoid broken paths:** exact file name, extension and capital letters; no leading `/`. If the file cannot be found, the card falls back to the YouTube thumbnail (for videos) or a tasteful placeholder, and the preview's yellow box names the missing file.
 - **Change the shape for all cards:** `works` → `"thumbnailRatio": "1 / 1"` (square), `"4 / 3"`, etc.
 - **Check:** refresh the Works page.
@@ -378,12 +388,15 @@ The thumbnail is the picture on the project card. It is separate from the link: 
 
 Nothing to configure: if the project's `url` (or `video`) is a YouTube address and the project has **no** custom `thumbnail`, the website fetches YouTube's own thumbnail.
 
-**Automatic thumbnail:**
+**Automatic thumbnail** (exactly how your three projects work now):
 ```json
 {
-  "title": "Neon Rain: Sound Design Reel",
-  "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
-  "thumbnail": ""
+  "show": true,
+  "featured": true,
+  "title": "ranged plasma stuff 2026 10 18 16 18 48 06",
+  "description": "ranged techy stuff",
+  "category": "Sound Design",
+  "url": "https://youtu.be/mcv0dqd2cu4"
 }
 ```
 **Switch to your own picture instead:** fill `thumbnail` ([section 10](#10-change-a-project-thumbnail)).
@@ -401,32 +414,32 @@ Many sites (itch.io, SoundCloud, Instagram, a personal page...) cannot be embedd
 - **File:** `content.json`
 - **Keys:** `url`, optionally `linkLabel`, `thumbnail`
 
-**Original:**
+**Original** (a video project from your list):
 ```json
 {
   "show": true,
-  "title": "Sound Effects Pack Vol. 1",
-  "description": "",
+  "featured": true,
+  "title": "m1s 2026 10 18 16 16 23 03",
+  "description": "m1 sfx work for my own game",
   "category": "Sound Design",
-  "year": 2023,
-  "url": "https://example.com/sfx-pack"
+  "url": "https://youtu.be/fX6n3dA0u-I"
 }
 ```
-**Modified:**
+**Modified** (the same kind of card, but for an ordinary website, with your own button text and thumbnail):
 ```json
 {
   "show": true,
   "title": "Sound Effects Pack Vol. 1",
   "description": "200 free sounds for your own projects.",
   "category": "Sound Design",
-  "year": 2023,
+  "year": 2025,
   "url": "https://yourname.itch.io/sfx-pack",
   "linkLabel": "Download on itch.io",
   "thumbnail": "assets/images/projects/sfx-pack.jpg"
 }
 ```
 - `url` must start with `https://` (a missing `https://` is added for you, but typing it is better).
-- `linkLabel` is the button text. If you leave it out, the button says "View on" plus the site name.
+- `linkLabel` is the button text. If you leave it out, the button says "View on" plus the site name. Buttons that lead to YouTube, itch.io, SoundCloud and other [supported sites](#6-add-social-media-links) get that site's white logo automatically.
 - The link opens in a new tab and is marked safe (`rel="noopener noreferrer"`).
 - **Check:** refresh the Works page and click the button.
 
@@ -439,13 +452,13 @@ Many sites (itch.io, SoundCloud, Instagram, a personal page...) cannot be embedd
 
 **Original:**
 ```json
-"description": "",
+"description": "ranged techy stuff",
 "category": "Sound Design",
 ```
 **Modified:**
 ```json
-"description": "Recorded and mixed all effects for a 6-minute short film.",
-"category": ["Sound Design", "Film"],
+"description": "Sci-fi ranged weapon sounds, layered from synths and field recordings.",
+"category": ["Sound Design", "Game Audio"],
 ```
 - `description` can be `""` or removed entirely; the card simply has no text.
 - `category` is either one text (`"Game Dev"`) or a list of texts (`["Video", "Animation"]`). Cards with a list appear under each of its categories.
@@ -466,7 +479,7 @@ Many sites (itch.io, SoundCloud, Instagram, a personal page...) cannot be embedd
 
 The project's information stays in the file; visitors just do not see it. Change it back to `true` to show it again. (A project with no `show` line counts as shown.)
 
-Also useful: `"featured": true` shows the project on the Home page's "Featured work" strip and marks it with a small accent dot. Change how many appear with `home` → `featured` → `max`, or switch the strip off with `visibility` → `"homeFeaturedWorks": false`.
+Also useful: `"featured": true` shows the project on the Home page's "Featured work" strip (all three of your current projects are featured). Change how many appear with `home` → `featured` → `max`, or switch the strip off with `visibility` → `"homeFeaturedWorks": false`.
 - **Check:** refresh the Works page. The project is gone (or back).
 
 ---
@@ -631,10 +644,11 @@ Steps:
 | Picture | Folder | Path you write in `content.json` |
 |---|---|---|
 | Homepage hero | `assets/images/` | `images` → `hero`: `"assets/images/hero.jpg"` |
-| About portrait | `assets/images/` | `images` → `aboutPortrait`: `"assets/images/me.jpg"` |
+| About portrait | `assets/images/` | `images` → `aboutPortrait`: `"assets/images/about-portrait.webp"` (the current one; 3 : 4 shape) |
 | About section pictures | `assets/images/about/` | section `image` → `src`: `"assets/images/about/studio.jpg"` |
 | Project thumbnails | `assets/images/projects/` | project `thumbnail`: `"assets/images/projects/my-game.jpg"` |
 | Favicon | `assets/` | `site` → `favicon`: `"assets/favicon.png"` |
+| Site logos (YouTube, Discord...) | `assets/icons/` | nothing to write; chosen automatically from each link's address |
 | Fallback card picture (optional) | `assets/images/` | `images` → `defaultThumbnail` |
 
 **Rules that prevent broken images**
@@ -790,7 +804,7 @@ All of these live in `content.json`. **Optional** fields may be left out or set 
 | `defaultThumbnail` | Picture for cards with no thumbnail and no video | Optional |
 
 ### `social.items[]`: social links
-`label` (text), `url` (`https://…` or `mailto:…`), `show`. Label and url required.
+`label` (text), `url` (`https://…` or `mailto:…`), `show`, `icon` (optional: `"none"` or a logo name such as `"github"`; normally the white logo is chosen automatically from the address). Label and url required.
 
 ### `home`: homepage
 | Field | Purpose | Required? |

@@ -1,0 +1,4 @@
+Logos in this folder come from Simple Icons (https://simpleicons.org), version 13.21.0,
+downloaded from https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/<name>.svg
+and released under the CC0 1.0 license. The logos remain trademarks of their respective owners.
+They are shown in plain white by styles.css (class ".icon"); script.js picks one from the web address.

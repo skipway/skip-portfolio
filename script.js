@@ -181,6 +181,52 @@
   }
 
   /* ------------------------------------------------------------------
+     ICONS: plain white logos from assets/icons/ (Simple Icons, CC0),
+     shown next to site names. Chosen from the web address, or from the
+     optional "icon" field of a social link.
+     ------------------------------------------------------------------ */
+
+  var ICON_NAMES = ['youtube', 'discord', 'github', 'x', 'soundcloud', 'instagram', 'twitch', 'tiktok', 'bandcamp', 'spotify', 'itchdotio', 'patreon', 'reddit', 'bluesky'];
+  var ICON_ALIASES = { twitter: 'x', itch: 'itchdotio', 'itch.io': 'itchdotio', bsky: 'bluesky', yt: 'youtube' };
+  var ICON_HOSTS = {
+    'youtube.com': 'youtube', 'youtu.be': 'youtube',
+    'discord.gg': 'discord', 'discord.com': 'discord', 'discordapp.com': 'discord',
+    'github.com': 'github', 'x.com': 'x', 'twitter.com': 'x',
+    'soundcloud.com': 'soundcloud', 'instagram.com': 'instagram', 'twitch.tv': 'twitch',
+    'tiktok.com': 'tiktok', 'bandcamp.com': 'bandcamp', 'spotify.com': 'spotify',
+    'itch.io': 'itchdotio', 'patreon.com': 'patreon', 'reddit.com': 'reddit', 'bsky.app': 'bluesky'
+  };
+
+  function iconForUrl(href) {
+    var host = hostOf(href || '').toLowerCase();
+    if (!host) return '';
+    var keys = Object.keys(ICON_HOSTS);
+    for (var i = 0; i < keys.length; i++) {
+      if (host === keys[i] || host.slice(-(keys[i].length + 1)) === '.' + keys[i]) return ICON_HOSTS[keys[i]];
+    }
+    return '';
+  }
+
+  // "icon": "none" hides it; a known name forces it; otherwise it is chosen from the address.
+  function normalizeIcon(value, href) {
+    var s = text(value, '').toLowerCase();
+    if (s === 'none') return '';
+    s = ICON_ALIASES[s] || s;
+    if (s && ICON_NAMES.indexOf(s) !== -1) return s;
+    if (s) warn('Unknown "icon": "' + value + '". Available: ' + ICON_NAMES.join(', ') + ', or "none". Choosing it from the web address instead.');
+    return iconForUrl(href);
+  }
+
+  function iconEl(name) {
+    if (!name || ICON_NAMES.indexOf(name) === -1) return null;
+    var el = h('span', { class: 'icon', 'aria-hidden': 'true' });
+    var url = 'url("assets/icons/' + name + '.svg")';
+    el.style.webkitMaskImage = url;
+    el.style.maskImage = url;
+    return el;
+  }
+
+  /* ------------------------------------------------------------------
      3. YOUTUBE HELPERS
      Recognises youtube.com/watch?v=ID, youtu.be/ID, youtube.com/shorts/ID
      (also /embed/ID, /live/ID and m./music. variants).
@@ -264,7 +310,7 @@
       var url = safeUrl(item.url, { allowMailto: true });
       var name = text(item.label, '');
       if (!url) { warn(label + ' item #' + (i + 1) + ' ("' + name + '") has a missing or invalid "url" and was skipped. It must start with https://'); return null; }
-      var entry = { label: name || hostOf(url) || url, url: url };
+      var entry = { label: name || hostOf(url) || url, url: url, icon: normalizeIcon(item.icon, url) };
       if (withDescription) entry.description = text(item.description, '');
       return entry;
     }).filter(Boolean);
@@ -301,6 +347,7 @@
       year: text(raw.year, ''),
       href: href,
       linkLabel: label,
+      linkIcon: iconForUrl(href),
       yt: yt,
       embed: flag(raw.embed, true),
       secondaryYouTube: !!(yt && href && !urlIsYouTube),   // video lives separately from the main link
@@ -527,7 +574,7 @@
 
   function socialList(items, className) {
     return h('ul', { class: className || 'chips' }, items.map(function (s) {
-      return h('li', null, link(s.url, 'chip', [s.label, h('span', { class: 'chip__arrow', 'aria-hidden': 'true' }, ' ↗')]));
+      return h('li', null, link(s.url, 'chip', [iconEl(s.icon), s.label]));
     }));
   }
 
@@ -640,14 +687,14 @@
       p.year ? h('span', { class: 'year' }, p.year) : null) : null;
 
     var actions = [];
-    if (p.href) actions.push(link(p.href, 'btn btn--ghost btn--sm', [p.linkLabel, h('span', { class: 'btn__arrow', 'aria-hidden': 'true' }, '↗')]));
-    if (p.secondaryYouTube) actions.push(link(p.yt.watchUrl, 'btn btn--ghost btn--sm', ['Watch on YouTube', h('span', { class: 'btn__arrow', 'aria-hidden': 'true' }, '↗')]));
+    if (p.href) actions.push(link(p.href, 'btn btn--ghost btn--sm', [iconEl(p.linkIcon), p.linkLabel, h('span', { class: 'btn__arrow', 'aria-hidden': 'true' }, '↗')]));
+    if (p.secondaryYouTube) actions.push(link(p.yt.watchUrl, 'btn btn--ghost btn--sm', [iconEl('youtube'), 'Watch on YouTube', h('span', { class: 'btn__arrow', 'aria-hidden': 'true' }, '↗')]));
 
-    return h('article', { class: 'card reveal' + (p.featured ? ' card--featured' : '') },
+    return h('article', { class: 'card reveal' },
       media,
       h('div', { class: 'card__body' },
         meta,
-        h('h3', { class: 'card__title' }, p.title, p.featured ? h('span', { class: 'sr-only' }, ' (featured)') : null),
+        h('h3', { class: 'card__title' }, p.title),
         p.description ? h('p', { class: 'card__desc' }, p.description) : null,
         actions.length ? h('div', { class: 'card__actions' }, actions) : null));
   }
