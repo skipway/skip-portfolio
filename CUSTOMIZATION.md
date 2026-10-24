@@ -209,7 +209,7 @@ Your current sections are "What I do" (a bullet `list`), "How I work" (one parag
 - **Where to put section pictures:** `assets/images/about/` (a tidy habit, any folder under `assets/images/` works). The path is `assets/images/about/studio.jpg`.
 - **Other About-page parts:**
   - `socialHeading` → title above your social links (also controlled by `visibility` → `aboutSocialLinks`).
-  - `externalLinksHeading` and `externalLinks` → a list of other links with optional descriptions (switch off with `visibility` → `aboutExternalLinks`):
+  - `externalLinksHeading` and `externalLinks` → the "More from me" list of other links with optional descriptions. **It is currently switched off** (`visibility` → `"aboutExternalLinks": false`); the sample entries stay in the file. Replace them with real links and set `"aboutExternalLinks": true` to bring the section back:
     ```json
     "externalLinks": [
       { "label": "Sound effects library", "url": "https://example.com/sfx", "description": "Free sounds for your own projects.", "show": true }
@@ -264,15 +264,14 @@ Your current sections are "What I do" (a bullet `list`), "How I work" (one parag
 
 **The easy way:** copy an existing project block, paste it after the last project, put a comma between, and change the values.
 
-**Original** (the end of the list: the last of your three projects):
+**Original** (the end of the list: your last project):
 ```json
       {
         "show": true,
-        "featured": true,
-        "title": "plasma shotgun 2026 10 18 16 17 58 04",
-        "description": "hard hitting shotty sfx stuffs",
+        "title": "gory hits 2026 10 23 22 49 57 05",
+        "description": "",
         "category": "Sound Design",
-        "url": "https://youtu.be/mznrcFtEXFc"
+        "url": "https://youtu.be/gW1G5LpDnMU"
       }
     ]
 ```
@@ -280,11 +279,10 @@ Your current sections are "What I do" (a bullet `list`), "How I work" (one parag
 ```json
       {
         "show": true,
-        "featured": true,
-        "title": "plasma shotgun 2026 10 18 16 17 58 04",
-        "description": "hard hitting shotty sfx stuffs",
+        "title": "gory hits 2026 10 23 22 49 57 05",
+        "description": "",
         "category": "Sound Design",
-        "url": "https://youtu.be/mznrcFtEXFc"
+        "url": "https://youtu.be/gW1G5LpDnMU"
       },
       {
         "show": true,
@@ -334,7 +332,7 @@ Paste the video address into `url`. These formats are recognised automatically (
 ```json
 "url": "https://example.com/my-project"
 ```
-**Modified** (now a video; this is how your three current projects are set up):
+**Modified** (now a video; this is how your current projects are set up):
 ```json
 "url": "https://youtu.be/fX6n3dA0u-I"
 ```
@@ -388,7 +386,7 @@ The thumbnail is the picture on the project card. It is separate from the link: 
 
 Nothing to configure: if the project's `url` (or `video`) is a YouTube address and the project has **no** custom `thumbnail`, the website fetches YouTube's own thumbnail.
 
-**Automatic thumbnail** (exactly how your three projects work now):
+**Automatic thumbnail** (exactly how all your projects work now):
 ```json
 {
   "show": true,
@@ -479,7 +477,7 @@ Many sites (itch.io, SoundCloud, Instagram, a personal page...) cannot be embedd
 
 The project's information stays in the file; visitors just do not see it. Change it back to `true` to show it again. (A project with no `show` line counts as shown.)
 
-Also useful: `"featured": true` shows the project on the Home page's "Featured work" strip (all three of your current projects are featured). Change how many appear with `home` → `featured` → `max`, or switch the strip off with `visibility` → `"homeFeaturedWorks": false`.
+Also useful: `"featured": true` shows the project on the Home page's "Featured work" strip (your first three projects are featured, which fills the strip's default maximum of three). Change how many appear with `home` → `featured` → `max`, or switch the strip off with `visibility` → `"homeFeaturedWorks": false`.
 - **Check:** refresh the Works page. The project is gone (or back).
 
 ---

@@ -58,7 +58,7 @@
     "homeSocialLinks": false,
     "aboutPortrait": true,
     "aboutSocialLinks": true,
-    "aboutExternalLinks": true,
+    "aboutExternalLinks": false,
     "worksIntro": true,
     "worksFilters": true,
     "footer": true,
@@ -190,6 +190,20 @@
         "description": "hard hitting shotty sfx stuffs",
         "category": "Sound Design",
         "url": "https://youtu.be/mznrcFtEXFc"
+      },
+      {
+        "show": true,
+        "title": "break/place commission 2026 10 23 22 44 10 02",
+        "description": "",
+        "category": "Sound Design",
+        "url": "https://youtu.be/xZs84IgGxRo"
+      },
+      {
+        "show": true,
+        "title": "gory hits 2026 10 23 22 49 57 05",
+        "description": "",
+        "category": "Sound Design",
+        "url": "https://youtu.be/gW1G5LpDnMU"
       }
     ]
   }
